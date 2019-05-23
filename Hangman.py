@@ -83,7 +83,7 @@ def drawBase():
         bareStep(1)
         bareStep(0)
 
-#This function picks a random word from a read only file that contains a list of words.  Then it returns the word as a plain string.
+#picks a random word from a read only file that contains a list of words. Returns the word as a plain string.
 def pickWord():
     file=open('/usr/share/dict/words', 'r')
     wordlist = file.readlines()
@@ -93,7 +93,7 @@ def pickWord():
     word=wordlist[pick]
     return word.strip()
 
-#This creates a list that contains the information for each word containing each sentence, and whether or not it has been guessed yet.
+#creates a list that contains the information for each word containing each sentence, and whether or not it has been guessed yet.
 def createSolution(word):
     solution=[]
     for each in word:
@@ -169,8 +169,6 @@ def letterGuess(word, solution, lives, guessed):
 #This function plays hangman.  The loop makes it so that you can play multiple games without ever having to restart the program.  
 def playHangman():
     print " "
-    print "Hi!"
-    print "This program can play a word guessing game."
     while True:
         print " "
         playGame = raw_input("Would you like to play? ")
@@ -186,7 +184,7 @@ def playHangman():
             word = pickWord()
             solution = createSolution(word)
             guessed = []
-            print "My word is", len(word), "letters long."
+            print "My word is", len(word), "letters long. "
             letterGuess(word, solution, lives, guessed)
         elif playGame[0] == "n":
             print "Okay....  Bye....."
@@ -194,6 +192,7 @@ def playHangman():
             break
         else:
             print "I didn't understand you.  Could you rephrase that? "
+            print "type 'y' to play, 'n' to quit. "
             
             
 playHangman()
