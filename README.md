@@ -1,1 +1,1 @@
-# Hangman-python-
+# Hangman (python)
