@@ -1,5 +1,3 @@
-#Katrina Fussell 8A
-#April 21, 2017
 import turtle
 import random
 
